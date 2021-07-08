@@ -1,0 +1,22 @@
+{
+    "name": "hulang/think-useragent",
+    "description": "The ThinkPHP5/6 Addons Package",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "hulangfy",
+            "email": "hulangfy@163.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "think\\": "src/"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    }
+}

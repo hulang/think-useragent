@@ -109,10 +109,7 @@ class Os
         } elseif (preg_match('/Windows (98|4\.10)/i', $useragent)) {
             $version = '98';
             $image_url = 'win-1';
-        } elseif (
-            preg_match('/Windows 95/i', $useragent)
-            || preg_match('/Win95/i', $useragent)
-        ) {
+        } elseif (preg_match('/Windows 95/i', $useragent) || preg_match('/Win95/i', $useragent)) {
             $version = '95';
             $image_url = 'win-1';
         } elseif (preg_match('/Windows CE|Windows .+Mobile/i', $useragent)) {
@@ -128,7 +125,6 @@ class Os
             $image_url = 'win-phone';
         }
         // @codeCoverageIgnoreEnd
-
         if ($return['image_url'] !== '') {
             $image_url = $return['image_url'];
         }
@@ -158,11 +154,9 @@ class Os
         } elseif (preg_match('/CentOS/i', $useragent)) {
             $link = 'http://www.centos.org/';
             $name = 'CentOS';
-
             if (preg_match('/.el([.0-9a-zA-Z]+).centos/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
             }
-
             $image_url = 'centos';
             // @codeCoverageIgnoreStart
         } elseif (preg_match('/Chakra/i', $useragent)) {
@@ -184,17 +178,14 @@ class Os
         } elseif (preg_match('/Edubuntu/i', $useragent)) {
             $link = 'http://www.edubuntu.org/';
             $name = 'Edubuntu';
-
             if (preg_match('/Edubuntu[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
-
                 if ($regmatch[1] < 10) {
                     $image_url = 'edubuntu-1';
                 } else {
                     $image_url = 'edubuntu-2';
                 }
             }
-
             if (strlen($version) > 1) {
                 $name .= $version;
             }
@@ -202,20 +193,16 @@ class Os
         } elseif (preg_match('/Fedora/i', $useragent)) {
             $link = 'http://www.fedoraproject.org/';
             $name = 'Fedora';
-
             if (preg_match('/.fc([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
             }
-
             $image_url = 'fedora';
         } elseif (preg_match('/Foresight\ Linux/i', $useragent)) {
             $link = 'http://www.foresightlinux.org/';
             $name = 'Foresight Linux';
-
             if (preg_match('/Foresight\ Linux\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
             }
-
             $image_url = 'foresight';
         } elseif (preg_match('/Gentoo/i', $useragent)) {
             $link = 'http://www.gentoo.org/';
@@ -239,10 +226,8 @@ class Os
         } elseif (preg_match('/Kubuntu/i', $useragent)) {
             $link = 'http://www.kubuntu.org/';
             $name = 'Kubuntu';
-
             if (preg_match('/Kubuntu[\/|\ ]([.0-9]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
-
                 if ($regmatch[1] < 10) {
                     $image_url = 'kubuntu-1';
                 } else {
@@ -251,7 +236,6 @@ class Os
             } else {
                 $image_url = 'kubuntu-2';
             }
-
             // @codeCoverageIgnoreEnd
         } elseif (preg_match('/LindowsOS/i', $useragent)) {
             $link = 'http://en.wikipedia.org/wiki/Lsongs';
@@ -264,35 +248,27 @@ class Os
         } elseif (preg_match('/Linux\ Mint/i', $useragent)) {
             $link = 'http://www.linuxmint.com/';
             $name = 'Linux Mint';
-
             if (preg_match('/Linux\ Mint\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
             }
-
             $image_url = 'linuxmint';
             // @codeCoverageIgnoreStart
-
         } elseif (preg_match('/Lubuntu/i', $useragent)) {
             $link = 'http://www.lubuntu.net/';
             $name = 'Lubuntu';
-
             if (preg_match('/Lubuntu[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
-
                 if ($regmatch[1] < 10) {
                     $image_url = 'lubuntu-1';
                 } else {
                     $image_url = 'lubuntu-2';
                 }
             }
-
             if (strlen($version) > 1) {
                 $name .= $version;
             }
             // @codeCoverageIgnoreEnd
-
             // @codeCoverageIgnoreStart
-
         } elseif (preg_match('/Mageia/i', $useragent)) {
             $link = 'http://www.mageia.org/';
             $name = 'Mageia';
@@ -302,37 +278,29 @@ class Os
             $link = 'http://www.mandriva.com/';
             $name = 'Mandriva';
             // @codeCoverageIgnoreStart
-
             if (preg_match('/mdv([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
             }
             // @codeCoverageIgnoreEnd
-
             $image_url = 'mandriva';
         } elseif (preg_match('/moonOS/i', $useragent)) {
             $link = 'http://www.moonos.org/';
             $name = 'moonOS';
-
             if (preg_match('/moonOS\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
             }
-
             $image_url = 'moonos';
         } elseif (preg_match('/Nova/i', $useragent)) {
             $link = 'http://www.nova.cu';
             $name = 'Nova';
-
             if (preg_match('/Nova[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
             }
-
             $image_url = 'nova';
             // @codeCoverageIgnoreStart
-
         } elseif (preg_match('/Oracle/i', $useragent)) {
             $link = 'http://www.oracle.com/us/technologies/linux/';
             $name = 'Oracle';
-
             if (preg_match('/.el([._0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $name .= ' Enterprise Linux';
                 $version = str_replace('_', '.', $regmatch[1]);
@@ -341,7 +309,6 @@ class Os
             }
             $image_url = 'oracle';
             // @codeCoverageIgnoreEnd
-
         } elseif (preg_match('/Pardus/i', $useragent)) {
             $link = 'http://www.pardus.org.tr/en/';
             $name = 'Pardus';
@@ -349,12 +316,10 @@ class Os
         } elseif (preg_match('/Red\ Hat/i', $useragent) || preg_match('/RedHat/i', $useragent)) {
             $link = 'http://www.redhat.com/';
             $name = 'Red Hat';
-
             if (preg_match('/.el([._0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $name .= ' Enterprise Linux';
                 $version = str_replace('_', '.', $regmatch[1]);
             }
-
             $image_url = 'red-hat';
         } elseif (preg_match('/Slackware/i', $useragent)) {
             $link = 'http://www.slackware.com/';
@@ -368,17 +333,14 @@ class Os
         } elseif (preg_match('/Xubuntu/i', $useragent)) {
             $link = 'http://www.xubuntu.org/';
             $name = 'Xubuntu';
-
             if (preg_match('/Xubuntu[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
-
                 if ($regmatch[1] < 10) {
                     $image_url = 'xubuntu-1';
                 } else {
                     $image_url = 'xubuntu-2';
                 }
             }
-
             // @codeCoverageIgnoreEnd
         } elseif (preg_match('/Zenwalk/i', $useragent)) {
             $link = 'http://www.zenwalk.org/';
@@ -388,14 +350,12 @@ class Os
         elseif (preg_match('/Ubuntu/i', $useragent)) {
             $link = 'http://www.ubuntu.com/';
             $name = 'Ubuntu';
-
             if (preg_match('/Ubuntu[\/|\ ]([.0-9]+[.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
                 if ($regmatch[1] < 10) {
                     $image_url = 'ubuntu-1';
                 }
             }
-
             if ($image_url == '') {
                 $image_url = 'ubuntu-2';
             }
@@ -425,7 +385,6 @@ class Os
             $link = 'http://www.android.com/';
             $name = 'Android';
             $image_url = 'android';
-
             if (preg_match('/(Android|Adr)[\ |\/]([.0-9]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[2];
             }
@@ -437,11 +396,9 @@ class Os
         } elseif (preg_match('/AmigaOS/i', $useragent)) {
             $link = 'http://en.wikipedia.org/wiki/AmigaOS';
             $name = 'AmigaOS';
-
             if (preg_match('/AmigaOS\ ([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
             }
-
             $image_url = 'amigaos';
         } elseif (preg_match('/BB10/i', $useragent)) {
             $link = 'http://www.blackberry.com/';
@@ -471,36 +428,28 @@ class Os
         } elseif (preg_match('/IRIX/i', $useragent)) {
             $link = 'http://www.sgi.com/partners/?/technology/irix/';
             $name = 'IRIX';
-
             if (preg_match('/IRIX(64)?\ ([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-
                 if ($regmatch[2]) {
                     $version = $regmatch[2];
                 }
             }
-
             $image_url = 'irix';
         } elseif (preg_match('/Mac/i', $useragent) || preg_match('/Darwin/i', $useragent)) {
             $link = 'http://www.apple.com/macosx/';
-
             if (preg_match('/(Mac OS ?X)/i', $useragent, $regmatch)) {
                 $name = substr($useragent, strpos(strtolower($useragent), strtolower($regmatch[1])));
                 $name = substr($name, 0, strpos($name, ')'));
-
                 if (strpos($name, ';')) {
                     $name = substr($name, 0, strpos($name, ';'));
                 }
-
                 $name = str_replace('_', '.', $name);
                 $name = str_replace('OSX', 'OS X', $name);
                 $macOSVersion = strpos($name, 'OS X') + 4;
                 $version = trim(substr($name, $macOSVersion));
                 $name = substr($name, 0, $macOSVersion);
-
                 if (version_compare('10.12', $version) < 1) {
                     $name = 'macOS';
                 }
-
                 $image_url = $regmatch[1] == 'Mac OSX' ? 'mac-2' : 'mac-3';
             } elseif (preg_match('/Darwin/i', $useragent)) {
                 $name = 'Mac OS Darwin';
@@ -529,7 +478,6 @@ class Os
             $link = 'https://www.riscosopen.org/';
             $name = 'RISC OS';
             $image_url = 'risc';
-
             if (preg_match('/RISC OS ([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[1];
             }
@@ -540,24 +488,20 @@ class Os
         } elseif (preg_match('/Symb(ian)?(OS)?/i', $useragent)) {
             $link = 'http://www.symbianos.org/';
             $name = 'SymbianOS';
-
             if (preg_match('/Symb(ian)?(OS)?\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
                 $version = $regmatch[3];
             }
-
             $image_url = 'symbian';
         } elseif (preg_match('/Tizen/i', $useragent)) {
             $link = 'https://www.tizen.org/';
             $name = 'Tizen';
             $image_url = 'tizen';
             // @codeCoverageIgnoreStart
-
         } elseif (preg_match('/Unix/i', $useragent)) {
             $link = 'http://www.unix.org/';
             $name = 'Unix';
             $image_url = 'unix';
             // @codeCoverageIgnoreStart
-
         } elseif (preg_match('/webOS/i', $useragent)) {
             $link = 'http://en.wikipedia.org/wiki/WebOS';
             $name = 'Palm webOS';

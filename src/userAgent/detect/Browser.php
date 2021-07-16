@@ -1667,7 +1667,6 @@ class Browser
                     $result['name'] = $result['title'];
                     $result['version'] = '';
                 }
-
                 return $result;
             } else {
                 return self::$browserList['none'];
@@ -1860,17 +1859,14 @@ class Browser
         } elseif ($lower_title == 'nichrome/self') {
             $start = 'self';
         }
-
         // Grab the browser version if its present
         $version = '';
-
         $start = preg_quote($start);
         if (preg_match('/' . $start . '[\ |\/|\:]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
             if (count($regmatch) > 1) {
                 $version = $regmatch[1];
             }
         }
-
         // $return = browser Title and Version, but first..some titles need to be changed
         if ($lower_title == 'msie' && $version == '7.0' && preg_match('/Trident\/4.0/i', $useragent)) {
             $return = ' 8.0 (Compatibility Mode)'; // Fix for IE8 quirky UA string with Compatibility Mode enabled
@@ -1942,7 +1938,6 @@ class Browser
         } else {
             $return = $title;
         }
-
         if (strtolower($version) == 'build') {
             $version = '';
         }

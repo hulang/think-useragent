@@ -1,3 +1,10 @@
+## thinkphp6.1+ 根据HTTP_REFERER获取：浏览器信息、操作系统、驱动器 的扩展包
+
+### 环境
+
+1. php >= 7.2.5
+2. thinkphp >=6.1
+
 # think-useragent
 
 A User-agent analyze project.
@@ -30,9 +37,10 @@ $useragent = \think\UserAgent::analyze();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>UserAgent</title>
+<meta charset="UTF-8">
+<title>UserAgent</title>
 </head>
+
 <body>
     <h1>Test UserAgent</h1>
     <p>UserAgent: <?php echo $useragent->useragent; ?></p>

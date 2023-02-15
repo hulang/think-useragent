@@ -1,9 +1,9 @@
-## thinkphp6.1+ 根据HTTP_REFERER获取：浏览器信息、操作系统、驱动器 的扩展包
+## ThinkPHP 6.1+ 根据HTTP_REFERER获取：浏览器信息、操作系统、驱动器 的扩展包
 
 ### 环境
 
-1. php >= 7.2.5
-2. thinkphp >=6.1
+- php >= 7.2.5
+- ThinkPHP >=6.1
 
 # think-useragent
 

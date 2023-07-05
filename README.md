@@ -1,4 +1,4 @@
-## ThinkPHP 6.1+ 根据HTTP_REFERER获取：浏览器信息、操作系统、驱动器 的扩展包
+## ThinkPHP 8.0.0 根据HTTP_REFERER获取：浏览器信息、操作系统、驱动器 的扩展包
 
 ### 环境
 

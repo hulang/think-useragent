@@ -2,8 +2,8 @@
 
 ### 环境
 
-- php >= 7.2.5
-- ThinkPHP >=6.1
+- php >=8.0.0
+- ThinkPHP ^8.0
 
 # think-useragent
 

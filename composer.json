@@ -1,6 +1,6 @@
 {
     "name": "hulang/think-useragent",
-    "description": "The ThinkPHP6.1+ HTTP_REFERER Package",
+    "description": "The ThinkPHP 8.0.0 HTTP_REFERER Package",
     "license": "Apache-2.0",
     "authors": [
         {

@@ -8,7 +8,6 @@ class UserAgent
 {
     private $_imagePath = '';
     private $_imageSize = 16;
-    private $_imageExtension = '.png';
 
     private $_data = [];
 
@@ -21,7 +20,8 @@ class UserAgent
         $privateParam = '_' . $param;
         switch ($param) {
             case 'imagePath':
-                return $this->_imagePath . '/static/img/' . $this->_imageSize . '/';
+                $path = join(DIRECTORY_SEPARATOR, [$this->_imagePath, 'static', 'img', $this->_imageSize, DIRECTORY_SEPARATOR]);
+                return $path;
                 break;
             default:
                 if (isset($this->$privateParam)) {
@@ -31,7 +31,6 @@ class UserAgent
                 }
                 break;
         }
-
         return null;
     }
     public function __set($name, $value)

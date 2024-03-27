@@ -9,12 +9,12 @@ use think\facade\Request;
 class UserAgent
 {
     /**
-     * 分析信息
-     * @param $string           UserAgent String
-     * @param null $imageSize   Image Size(16 / 24)
-     * @param null $imagePath   Image Path
-     * @param null $imageExtension  Image Description
-     * @return userAgent\UserAgent
+     * 分析[UserAgent]
+     * @param $string UserAgent 浏览器的UserAgent用户代理
+     * @param $imageSize Image Size(16/24) 显示图片大小
+     * @param $imagePath Image Path 图片路径
+     * @param $imageExtension Image Extension 图片扩展名
+     * @return userAgent\UserAgent UserAgent对象
      */
     public static function analyze($string = '', $imageSize = null, $imagePath = null, $imageExtension = null)
     {
@@ -23,9 +23,11 @@ class UserAgent
         }
 
         $class = new \think\userAgent\UserAgent();
+
         $imageSize === null || $class->imageSize = $imageSize;
         $imagePath === null || $class->imagePath = $imagePath;
         $imageExtension === null || $class->imageExtension = $imageExtension;
+
         $class->analyze($string);
 
         return $class;
